@@ -1,0 +1,14 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  margin: 0% 33%;
+}
+.success {
+  border: solid;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgb(29, 196, 29);
+  font-size: 30px;
+  text-align: center;
+}
