@@ -4,22 +4,22 @@ import { AlertMessageType } from '../../../variables/enums/alertTypes';
 
 
 @Component({
-  selector: 'app-warning',
-  templateUrl: './warning.component.html',
-  styleUrls: ['./warning.component.css']
+  selector: 'app-failure',
+  templateUrl: './failure.component.html',
+  styleUrls: ['./failure.component.css']
 })
-export class WarningComponent implements OnInit {
+export class FailureComponent implements OnInit {
 
-  public warningMessage: string;
+  public failureMessage: string;
 
   constructor(private alert: AlertsService) { }
 
   ngOnInit() {
     this.alert.currentMessage.subscribe(alert => {
-      if (alert.type === AlertMessageType.WARNING) {
-        this.warningMessage = alert.message;
+      if (alert.type === AlertMessageType.FAILURE) {
+        this.failureMessage = alert.message;
       } else {
-        this.warningMessage = '';
+        this.failureMessage = '';
       }
     });
   }

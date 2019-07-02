@@ -33,10 +33,6 @@ export class ServerComponent implements OnInit {
     }
   }
 
-  onCreateServer() {
-    alert('Server Created!');
-  }
-
   onButtonClick() {
     switch (this.serverStatus) {
       case 200: {

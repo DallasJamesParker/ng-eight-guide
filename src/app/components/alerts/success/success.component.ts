@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertsService } from '../../../services/alerts/alerts.service';
+import { AlertMessageType } from '../../../variables/enums/alertTypes';
+
 
 @Component({
   selector: 'app-success',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuccessComponent implements OnInit {
 
-  constructor() { }
+  public successMessage: string;
+
+  constructor(private alert: AlertsService) { }
 
   ngOnInit() {
+    this.alert.currentMessage.subscribe(alert => {
+      if (alert.type === AlertMessageType.SUCCESS) {
+        this.successMessage = alert.message;
+      } else {
+        this.successMessage = '';
+      }
+    });
   }
 
 }
