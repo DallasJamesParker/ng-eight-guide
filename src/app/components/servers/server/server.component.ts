@@ -58,14 +58,14 @@ export class ServerComponent implements OnInit {
       }
       case 500: {
         const priority = 2;
-        const message = 'Status 200: Internal Server Error';
+        const message = 'Status 500: Internal Server Error';
         const messageType = AlertMessageType.FAILURE;
         this.alertService.changeMessage(messageType, message, priority);
         break;
       }
       default: {
         const priority = 1;
-        const message = 'FATAL ERROR - A VIRUS HAS BEEN DETECTED IN YOUR SYSTEM TRAY - EXPORTING ALL PERSONAL DATA OFFSHORES';
+        const message = 'Status Code Unrecognized: Fatal Error';
         const messageType = AlertMessageType.FAILURE;
         this.alertService.changeMessage(messageType, message, priority);
       }

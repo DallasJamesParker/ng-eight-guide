@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertsService } from '../../../services/alerts/alerts.service';
 import { AlertMessageType } from '../../../variables/enums/alertTypes';
+import { filter } from 'rxjs/operators';
 
 
 @Component({
@@ -15,12 +16,8 @@ export class FailureComponent implements OnInit {
   constructor(private alert: AlertsService) { }
 
   ngOnInit() {
-    this.alert.currentMessage.subscribe(alert => {
-      if (alert.type === AlertMessageType.FAILURE) {
-        this.failureMessage = alert.message;
-      } else {
-        this.failureMessage = '';
-      }
+    this.alert.currentMessage.pipe(filter((alert) => alert.type === AlertMessageType.FAILURE)).subscribe(alert => {
+      this.failureMessage = alert.message;
     });
   }
 
