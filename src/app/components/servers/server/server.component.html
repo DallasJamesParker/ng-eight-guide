@@ -20,9 +20,9 @@ class="btn btn-primary">Change Server name</button>
 <!--for (server of servers) {-->
 <div>Server Name: {{serverName}}</div>
 <span [ngSwitch]="serverStatus">
-  <p *ngSwitchCase="'200'">Server Status: Online</p>
-  <p *ngSwitchCase="'400'">Server Status: Forbidden</p>
-  <p *ngSwitchCase="'404'">Server Status: Not Found</p>
+  <p *ngSwitchCase="200">Server Status: Online</p>
+  <p *ngSwitchCase="400">Server Status: Forbidden</p>
+  <p *ngSwitchCase="404">Server Status: Not Found</p>
   <p *ngSwitchDefault>FATAL ERROR - A VIRUS HAS BEEN DETECTED IN YOUR SYSTEM TRAY - EXPORTING ALL PERSONAL DATA OFFSHORES</p>
 </span>
 <!--}-->
